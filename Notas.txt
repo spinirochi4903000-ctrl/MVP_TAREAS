@@ -1,0 +1,5 @@
+Activar el entorno virtual de trabajo en bash:
+source venv/Scripts/activate
+
+Comando para ejecutar pgsql en la cmd:
+psql -U postgres
