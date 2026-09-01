@@ -3,3 +3,27 @@ source venv/Scripts/activate
 
 Comando para ejecutar pgsql en la cmd:
 psql -U postgres
+
+
+PARA QUE FUNCIONE BIEN LA CONEXION:
+- Se tiene que crear datos especificos en las base de datos con las isguientes dos incerciones 
+(
+    INSERT INTO usuario (id_usuario, rol, nombre_usuario, apellido_usuario, correo_usuario, contrasena_hash, fecha_registro, estado) VALUES (1, 'estudiante', 'Janus', 'Rocha', 'janus@gmail.com', 'Sena1234', DEFAULT, 'activo');
+    (Se crea un usuario requerido para la tarea)
+
+    INSERT INTO tipo_tarea (id_tipo_tarea, descripcion, id_usuario, nombre_tipo_tarea) VALUES (1, 'Academica', 1, 'arreglar la cagalera de base de datos');
+    (Se crea un tipo de tarea requerido para crear la tarea)
+
+)
+
+EL JSON TIENE QUE SER ALGO ASI:
+(
+    {
+  "id_tipo_tarea": 1,
+  "fecha_hora": "2026-09-01T02:14:44.239Z",
+  "descripcion": "Sirvebutifarra",
+  "fecha_vencimiento": "2026-09-01T02:14:44.239Z",
+  "prioridad": "media",
+  "estado": "pendiente"
+}
+)
