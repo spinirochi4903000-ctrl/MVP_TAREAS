@@ -3,6 +3,7 @@ from model.task_connection import TaskConnection
 from schema.task_schema import TaskSchema
 
 app = FastAPI()
+conn = TaskConnection()
 
 @app.get("/")
 def root():
@@ -10,5 +11,5 @@ def root():
 
 @app.post("/api/insert")
 def insert(task_data: TaskSchema):
-    print(task_data)
+    conn.write(task_data.dict())
     return {"message": "Task inserted successfully!"}
